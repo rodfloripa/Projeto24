@@ -14,7 +14,7 @@ Observando os percentuais das variáveis booleanas podemos ver que o conjunto é
 
 As três variáveis numéricas tem alguns valores extremos. As médias são significativamente maiores que as medianas. Em distribuições simétricas, elas seriam próximas. Uma média muito maior indica que os valores mais altos (outliers) estão puxando a média para cima, caracterizando uma assimetria positiva (à direita).
 
-![][image2]
+![Fig 2](image1.png)
 
 ### **Preparação dos dados**
 
