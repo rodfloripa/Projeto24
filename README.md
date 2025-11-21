@@ -10,7 +10,7 @@ O objetivo é projetar e avaliar um modelo de detecção de fraude em transaçõ
 
 Observando os percentuais das variáveis booleanas podemos ver que o conjunto é bastante desbalanceado,pois só 8.7% das transações são fraudulentas. Repeat\_retalier,used\_pin\_number também são bastante descalanceadas.
 
-![][image1]  
+![Fig 1](image1.png) 
 As três variáveis numéricas tem alguns valores extremos. As médias são significativamente maiores que as medianas. Em distribuições simétricas, elas seriam próximas. Uma média muito maior indica que os valores mais altos (outliers) estão puxando a média para cima, caracterizando uma assimetria positiva (à direita).
 
 ![][image2]
