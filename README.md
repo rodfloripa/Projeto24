@@ -12,10 +12,14 @@ Observando os percentuais das variáveis booleanas podemos ver que o conjunto é
 
 ![Fig 1](image1.png) 
 
+Fig1. Variaveis binarias
+ <br> <br>
 As três variáveis numéricas tem alguns valores extremos. As médias são significativamente maiores que as medianas. Em distribuições simétricas, elas seriam próximas. Uma média muito maior indica que os valores mais altos (outliers) estão puxando a média para cima, caracterizando uma assimetria positiva (à direita).
 
 ![Fig 2](image2.png)
 
+Fig2. Estatistica descritiva
+ <br> <br>
 ### **Preparação dos dados**
 
 Não existem dados ausentes e não é necessário fazer a normalização dos dados,pois vou usar modelos que não tem essa necessidade. 
@@ -34,7 +38,8 @@ Diminuir o limiar aumenta a sensibilidade do modelo. Isso aumenta a Recorrência
 
 
 <img src="image3.png" alt="Fig 3" width="50%" />
-
+Fig3. Curva PR
+ <br> <br> <br>
 
  Faz sentido usar o modelo xgboost, embora seja menos explicável que a regressão log ele teve o melhor desempenho,que é o mais importante aqui.
 
