@@ -1,6 +1,6 @@
 
 
-## **Modelo de Detecção de Fraude**
+## **Modelo de Detecção de Fraude**(CRISP)
 
 ### **Entendimento do negócio**
 
