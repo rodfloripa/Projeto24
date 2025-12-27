@@ -2,6 +2,8 @@
 
 ## **Modelo de Detecção de Fraude**(CRISP)
 
+Desafio técnico da VOM
+
 ### **Entendimento do negócio**
 
 O objetivo é projetar e avaliar um modelo de detecção de fraude em transações de cartão em tempo real, potencialmente integrável ao motor de decisão da Vom. A métrica que queremos otimizar é a recorrência,pois aprovar uma fraude é mais custoso que negar indevidamente uma transação legítima.
