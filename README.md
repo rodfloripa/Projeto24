@@ -5,39 +5,45 @@
 Desafio técnico da VOM
 
 ### **Entendimento do negócio**
-
+<p align="justify">
 O objetivo é projetar e avaliar um modelo de detecção de fraude em transações de cartão em tempo real, potencialmente integrável ao motor de decisão da Vom. A métrica que queremos otimizar é a recorrência,pois aprovar uma fraude é mais custoso que negar indevidamente uma transação legítima.
+</p>
 
 ### **Entendimento dos dados**
-
+<p align="justify">
 Observando os percentuais das variáveis booleanas podemos ver que o conjunto é bastante desbalanceado,pois só 8.7% das transações são fraudulentas. As variáveis 'repeat\_retalier' e 'used\_pin\_number' também são bastante desbalanceadas.
+</p>
 
 ![Fig 1](image1.png) 
 
 Fig1. Variaveis binarias
  <br> <br>
+<p align="justify">
 As três variáveis numéricas tem alguns valores extremos. As médias são significativamente maiores que as medianas. Em distribuições simétricas, elas seriam próximas. Uma média muito maior indica que os valores mais altos (outliers) estão puxando a média para cima, caracterizando uma assimetria positiva (à direita).
+</p>
 
 ![Fig 2](image2.png)
 
 Fig2. Estatistica descritiva
  <br> <br>
+ 
 ### **Preparação dos dados**
 
-Não existem dados ausentes e não é necessário fazer a normalização dos dados,pois vou usar modelos que não tem essa necessidade. 
-
-Também não foram identificadas variáveis correlacionadas para serem removidas e não existem variáveis categóricas onde seria necessária a codificação
+<p align="justify">
+Não existem dados ausentes e não é necessário fazer a normalização dos dados,pois vou usar modelos que não tem essa necessidade. Também não foram identificadas variáveis correlacionadas para serem removidas e não existem variáveis categóricas onde seria necessária a codificação
+</p>
 
 ### **Modelagem**
 
+<p align="justify">
 Foram testados os modelos regressão log xgboost. Este tipo de regressão é um modelo simples e interpretável,recomendado para as fases iniciais de modelagem.O xgboost é um modelo em árvore com boost,mas é menos interpretável.
+</p>
 
 ### **Avaliação**
 
- O modelo com regressão log obteve recorrência de 0.95 e o modelo Xgboost 0.99, então foi escolhido o Xgboost para colocar em produção por ter a maior recorrência.
-
-Diminuir o limiar aumenta a sensibilidade do modelo. Isso aumenta a Recorrência (↓FN) e, geralmente, diminui a Precisão (↑FP). O ponto de desempenho se move para baixo e para a direita no gráfico PR. Aumentar o limiar eleva a seletividade/rigor do modelo. Isso aumenta a Precisão (↓FP) e, geralmente, diminui a Recorrência (↑FN). O ponto de desempenho se move para cima e para a esquerda no gráfico PR. Aqui foi usado o limiar padrão de 0.5 pois ele já maximiza a recorrência.
-
+<p align="justify">
+ O modelo com regressão log obteve recorrência de 0.95 e o modelo Xgboost 0.99, então foi escolhido o Xgboost para colocar em produção por ter a maior recorrência.Diminuir o limiar aumenta a sensibilidade do modelo. Isso aumenta a Recorrência (↓FN) e, geralmente, diminui a Precisão (↑FP). O ponto de desempenho se move para baixo e para a direita no gráfico PR. Aumentar o limiar eleva a seletividade/rigor do modelo. Isso aumenta a Precisão (↓FP) e, geralmente, diminui a Recorrência (↑FN). O ponto de desempenho se move para cima e para a esquerda no gráfico PR. Aqui foi usado o limiar padrão de 0.5 pois ele já maximiza a recorrência.
+</p>
 
 <img src="image3.png" alt="Fig 3" width="50%" />
 Fig3. Curva PR
